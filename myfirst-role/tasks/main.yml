@@ -1,0 +1,15 @@
+---
+# tasks file for myfirst-role
+- name: my first role
+  action: ping
+- name: calling variable
+  command: "echo {{ xyz }}" 
+- name: example copying file with owner and permissions
+  copy:
+    src: test.txt
+    dest: /tmp/test.txt
+    mode: 0644
+- template:
+    src: test-file.j2
+    dest: /tmp/file.conf
+    mode: 0644
